@@ -10,5 +10,11 @@
     "rolle": "Teilnehmerin",
     "beitrag": "Ich lege meinen zweiten Beitrag in die selbe JSON-Datei.",
     "farbe": "green"
+  },
+  {
+    "name": "Ada",
+    "rolle": "Teilnehmerin",
+    "beitrag": "Ich lege meinen dritten Beitrag in die selbe JSON-Datei.",
+    "farbe": "green"
   }
 ]
