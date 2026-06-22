@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kurs-Pinnwand</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Git & Zusammenarbeit</p>
+      <h1>Kurs-Pinnwand</h1>
+      <p>
+        Diese Seite wird aus einer kleinen JSON-Datei aufgebaut. Jede Änderung
+        kann per Git nachvollzogen, geprüft und veröffentlicht werden.
+      </p>
+    </header>
+
+    <section class="status" aria-live="polite">
+      <span id="count">Beiträge werden geladen ...</span>
+      <span id="updated">Stand: lokal</span>
+    </section>
+
+    <section id="board" class="board" aria-label="Kursbeiträge"></section>
+  </main>
+
+  <template id="cardTemplate">
+    <article class="card">
+      <span class="badge"></span>
+      <h2></h2>
+      <p></p>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

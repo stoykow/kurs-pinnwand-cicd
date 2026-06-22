@@ -1,0 +1,68 @@
+name: Check und GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Beitragsdaten prüfen
+        run: node scripts/check-data.js
+
+      - name: Website-Paket vorbereiten
+        run: |
+          mkdir -p dist
+          cp index.html style.css app.js dist/
+          cp -r data dist/
+
+      - name: Website-Paket als Artifact speichern
+        uses: actions/upload-artifact@v4
+        with:
+          name: kurs-pinnwand
+          path: dist/
+
+  deploy:
+    needs: check
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Beitragsdaten prüfen
+        run: node scripts/check-data.js
+
+      - name: GitHub-Pages-Paket vorbereiten
+        run: |
+          mkdir -p dist
+          cp index.html style.css app.js dist/
+          cp -r data dist/
+
+      - name: GitHub Pages konfigurieren
+        uses: actions/configure-pages@v5
+
+      - name: GitHub-Pages-Artifact hochladen
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+
+      - name: GitHub Pages veröffentlichen
+        id: deployment
+        uses: actions/deploy-pages@v4

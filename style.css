@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #202124;
+  background: #eef3f8;
+}
+
+.page {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 40px 18px;
+}
+
+.hero {
+  padding: 28px;
+  border: 1px solid #ccd8e3;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #006f7a;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0 0 12px;
+  color: #17445e;
+  font-size: 3rem;
+}
+
+.hero p {
+  max-width: 760px;
+  line-height: 1.55;
+}
+
+.status {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 20px 0;
+  color: #47525d;
+  font-size: 0.95rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  min-height: 180px;
+  padding: 20px;
+  border: 1px solid #d5e0ea;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #60717f;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.card h2 {
+  margin: 0 0 10px;
+  color: #17445e;
+  font-size: 1.25rem;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.card.teal .badge {
+  background: #007b83;
+}
+
+.card.blue .badge {
+  background: #2064a0;
+}
+
+.card.green .badge {
+  background: #2b7a3f;
+}
+
+.card.amber .badge {
+  background: #a86800;
+}
+
+.card.gray .badge {
+  background: #60717f;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 24px 14px;
+  }
+
+  .hero {
+    padding: 22px;
+  }
+
+  h1 {
+    font-size: 2.15rem;
+  }
+
+  .status {
+    flex-direction: column;
+  }
+}
