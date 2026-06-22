@@ -2,6 +2,11 @@
 
 Dieses Mini-Projekt ist für den Git- und GitHub-Einstieg gedacht.
 
+Online:
+
+- Repository: <https://github.com/stoykow/kurs-pinnwand-cicd>
+- Veröffentlichte Seite: <https://stoykow.github.io/kurs-pinnwand-cicd/>
+
 Die Idee:
 
 - Eine einfache Webseite zeigt Beiträge aus `data/beitraege.json`.
