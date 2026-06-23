@@ -1,0 +1,20 @@
+[
+    {
+    "name": "Manuel",
+    "rolle": "Teilnehmer",
+    "beitrag": "Ich finde GitHub nützlich, um meine Projekte zu organisieren",
+    "farbe": "amber"
+    },
+    {
+    "name": "Manuel",
+    "rolle": "Teilnehmer",
+    "beitrag": "Teil 2: GitHub ist im Internet zu finden",
+    "farbe": "amber"
+    },
+    {
+    "name": "Manuel",
+    "rolle": "Teilnehmer",
+    "beitrag": "Teil 3: Jetzt schreibe ich einen 3. unnötigen Eintrag",
+    "farbe": "amber"
+    }
+]
