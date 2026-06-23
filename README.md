@@ -20,6 +20,10 @@ Das Projekt ist bewusst einfach. Es geht nicht um perfekte Webentwicklung, sonde
 Fork/Branch -> Änderung -> Commit -> Push -> Pull Request -> Check/Build -> Merge -> sichtbares Ergebnis
 ```
 
+Für die Arbeit mit mehreren Personen siehe:
+
+- [Anleitung - Zusammenarbeit mit der Kurs-Pinnwand](ANLEITUNG_ZUSAMMENARBEIT.md)
+
 ## Lokal öffnen
 
 Baue zuerst die gemeinsame Beitragsdatei:
