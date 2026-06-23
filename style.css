@@ -2,11 +2,37 @@
   box-sizing: border-box;
 }
 
+:root {
+  color-scheme: light;
+  --page-bg: #eef3f8;
+  --surface: #ffffff;
+  --surface-soft: #f6f9fc;
+  --text: #202124;
+  --muted: #47525d;
+  --border: #ccd8e3;
+  --heading: #17445e;
+  --accent: #006f7a;
+  --focus: #0c7fb0;
+}
+
+body[data-theme="dark"] {
+  color-scheme: dark;
+  --page-bg: #101820;
+  --surface: #182431;
+  --surface-soft: #223140;
+  --text: #e8eef4;
+  --muted: #aebdca;
+  --border: #33485a;
+  --heading: #d8ecff;
+  --accent: #64d6df;
+  --focus: #80d8ff;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  color: #202124;
-  background: #eef3f8;
+  color: var(--text);
+  background: var(--page-bg);
 }
 
 .page {
@@ -17,20 +43,20 @@ body {
 
 .hero {
   padding: 28px;
-  border: 1px solid #ccd8e3;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: #ffffff;
+  background: var(--surface);
 }
 
 .eyebrow {
   margin: 0 0 8px;
-  color: #006f7a;
+  color: var(--accent);
   font-weight: 700;
 }
 
 h1 {
   margin: 0 0 12px;
-  color: #17445e;
+  color: var(--heading);
   font-size: 3rem;
 }
 
@@ -39,12 +65,64 @@ h1 {
   line-height: 1.55;
 }
 
+.theme-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 12px 0 0;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-soft);
+}
+
+.theme-switcher legend {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+}
+
+.theme-switcher label {
+  cursor: pointer;
+}
+
+.theme-switcher input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.theme-switcher span {
+  display: inline-flex;
+  min-width: 74px;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.theme-switcher input:checked + span {
+  color: var(--surface);
+  background: var(--accent);
+}
+
+.theme-switcher input:focus-visible + span {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
 .status {
   display: flex;
   justify-content: space-between;
   gap: 12px;
   margin: 20px 0;
-  color: #47525d;
+  color: var(--muted);
   font-size: 0.95rem;
 }
 
@@ -57,9 +135,9 @@ h1 {
 .card {
   min-height: 180px;
   padding: 20px;
-  border: 1px solid #d5e0ea;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: #ffffff;
+  background: var(--surface);
 }
 
 .badge {
@@ -75,7 +153,7 @@ h1 {
 
 .card h2 {
   margin: 0 0 10px;
-  color: #17445e;
+  color: var(--heading);
   font-size: 1.25rem;
 }
 
